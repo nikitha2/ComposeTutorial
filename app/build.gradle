@@ -60,4 +60,5 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:1.2.0-beta03"
     debugImplementation "androidx.compose.ui:ui-tooling:1.1.1"
     debugImplementation "androidx.compose.ui:ui-test-manifest:1.2.0-beta03"
+    implementation "androidx.compose.material:material-icons-extended:1.2.0-beta03"
 }

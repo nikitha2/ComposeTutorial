@@ -2,5 +2,6 @@
     <string name="app_name">ComposeTutorial</string>
     <string name="mainLabel">Compose Tutorial</string>
     <string name="chatLabel">Chat UI with Compose Tutorial</string>
-
+    <string name="show_less">Show less</string>
+    <string name="show_more">Show more</string>
 </resources>

@@ -33,7 +33,7 @@
             android:theme="@style/Theme.ComposeTutorial" />
 
         <activity
-            android:name=".CodeLabActivity"
+            android:name=".ComposeBasicsActivity"
             android:exported="true"
             android:theme="@style/Theme.ComposeTutorial" />
     </application>
