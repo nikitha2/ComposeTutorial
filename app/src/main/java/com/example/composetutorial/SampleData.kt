@@ -77,6 +77,21 @@ object SampleData {
         Message(
             "Colleague",
             "Can you hear me?"
+        ),
+        Message(
+            "Colleague",
+            "Hey, take a look at Jetpack Compose, it's great!\n" +
+                    "It's the Android's modern toolkit for building native UI." +
+                    "It simplifies and accelerates UI development on Android." +
+                    "Less code, powerful tools, and intuitive Kotlin APIs :)"
         ))
+
+    val buttons = listOf(
+        MainActivity.Button("Chat Screen","ChatActivity"),
+        MainActivity.Button("Compose Codelab","CodelabActivity"))
+
+    val cards = listOf(
+        CodeLabActivity.Greeting("Hello, World","This is the conent for world!"),
+        CodeLabActivity.Greeting("Hello, Compose","This is the conent for Compose!"))
 
 }
