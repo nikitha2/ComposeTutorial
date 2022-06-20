@@ -88,29 +88,30 @@ object SampleData {
 
     val buttons = listOf(
         MainActivity.Button("Compose overview CodeLab","ComposeOverviewTutorialActivity"),
-        MainActivity.Button("Compose basics CodeLab","ComposeBasicsActivity"))
+        MainActivity.Button("Compose basics CodeLab","ComposeBasicsActivity"),
+        MainActivity.Button("Compose Migration CodeLab","ComposeMigrateActivity"))
 
     val cards = listOf(
-        ComposeBasicsActivity.Greeting("Hello, 1","This is the conent for 1!"),
-        ComposeBasicsActivity.Greeting("Hello, 2","This is the conent for 2!"),
-        ComposeBasicsActivity.Greeting("Hello, 3","This is the conent for 3!"),
-        ComposeBasicsActivity.Greeting("Hello, 4","This is the conent for 4!"),
-        ComposeBasicsActivity.Greeting("Hello, 5","This is the conent for 5!"),
-        ComposeBasicsActivity.Greeting("Hello, 6","This is the conent for 6!"),
-        ComposeBasicsActivity.Greeting("Hello, 7","This is the conent for 7!"),
-        ComposeBasicsActivity.Greeting("Hello, 8","This is the conent for 8!"),
-        ComposeBasicsActivity.Greeting("Hello, 9","This is the conent for 9!"),
-        ComposeBasicsActivity.Greeting("Hello, 10","This is the conent for 10!"),
-        ComposeBasicsActivity.Greeting("Hello, 11","This is the conent for 11!"),
-        ComposeBasicsActivity.Greeting("Hello, 12","This is the conent for 12!"),
-        ComposeBasicsActivity.Greeting("Hello, 13","This is the conent for 13!"),
-        ComposeBasicsActivity.Greeting("Hello, 14","This is the conent for 14!"),
-        ComposeBasicsActivity.Greeting("Hello, 15","This is the conent for 15!"),
-        ComposeBasicsActivity.Greeting("Hello, 16","This is the conent for 16!"),
-        ComposeBasicsActivity.Greeting("Hello, 17","This is the conent for 17!"),
-        ComposeBasicsActivity.Greeting("Hello, 18","This is the conent for 18!"),
-        ComposeBasicsActivity.Greeting("Hello, 19","This is the conent for 19!"),
-        ComposeBasicsActivity.Greeting("Hello, 20","This is the conent for 20!"))
+        ComposeBasicsActivity.Greeting("Hello, 1","This is the content for 1!"),
+        ComposeBasicsActivity.Greeting("Hello, 2","This is the content for 2!"),
+        ComposeBasicsActivity.Greeting("Hello, 3","This is the content for 3!"),
+        ComposeBasicsActivity.Greeting("Hello, 4","This is the content for 4!"),
+        ComposeBasicsActivity.Greeting("Hello, 5","This is the content for 5!"),
+        ComposeBasicsActivity.Greeting("Hello, 6","This is the content for 6!"),
+        ComposeBasicsActivity.Greeting("Hello, 7","This is the content for 7!"),
+        ComposeBasicsActivity.Greeting("Hello, 8","This is the content for 8!"),
+        ComposeBasicsActivity.Greeting("Hello, 9","This is the content for 9!"),
+        ComposeBasicsActivity.Greeting("Hello, 10","This is the content for 10!"),
+        ComposeBasicsActivity.Greeting("Hello, 11","This is the content for 11!"),
+        ComposeBasicsActivity.Greeting("Hello, 12","This is the content for 12!"),
+        ComposeBasicsActivity.Greeting("Hello, 13","This is the content for 13!"),
+        ComposeBasicsActivity.Greeting("Hello, 14","This is the content for 14!"),
+        ComposeBasicsActivity.Greeting("Hello, 15","This is the content for 15!"),
+        ComposeBasicsActivity.Greeting("Hello, 16","This is the content for 16!"),
+        ComposeBasicsActivity.Greeting("Hello, 17","This is the content for 17!"),
+        ComposeBasicsActivity.Greeting("Hello, 18","This is the content for 18!"),
+        ComposeBasicsActivity.Greeting("Hello, 19","This is the content for 19!"),
+        ComposeBasicsActivity.Greeting("Hello, 20","This is the content for 20!"))
 
 
 

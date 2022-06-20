@@ -61,6 +61,7 @@ class MainActivity : BaseActivity() {
         when (screenToOpen) {
             "ComposeOverviewTutorialActivity" -> context?.startActivity(Intent(context, ChatActivity::class.java))
             "ComposeBasicsActivity" -> context?.startActivity(Intent(context, ComposeBasicsActivity::class.java))
+            "ComposeMigrateActivity" -> context?.startActivity(Intent(context, ComposeMigrateActivity::class.java))
             else -> context?.startActivity(Intent(context, ChatActivity::class.java))
         }
     }
