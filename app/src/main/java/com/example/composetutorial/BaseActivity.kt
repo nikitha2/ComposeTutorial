@@ -20,7 +20,7 @@ open class BaseActivity : ComponentActivity() {
     }
 
     @Composable
-    fun TopAppBar(title:String) {
+    fun SetToolbar(title:String) {
         TopAppBar({ Text(text = title) })
     }
 }

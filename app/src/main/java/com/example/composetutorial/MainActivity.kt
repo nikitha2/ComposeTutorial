@@ -8,10 +8,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -40,7 +37,7 @@ class MainActivity : BaseActivity() {
 
     @Composable
     private fun SetButtons(buttons: List<Button>) {
-        TopAppBar(stringResource(R.string.mainLabel))
+        SetToolbar(stringResource(R.string.mainLabel))
         context = LocalContext.current
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
@@ -75,7 +72,7 @@ class MainActivity : BaseActivity() {
     )
     @Composable
     fun DefaultPreview() {
-        ComposeTutorialTheme() {
+        ComposeTutorialTheme {
             SetButtons(SampleData.buttons)
         }
     }
