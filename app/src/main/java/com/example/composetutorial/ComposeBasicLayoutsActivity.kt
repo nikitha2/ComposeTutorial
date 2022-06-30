@@ -19,7 +19,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Spa
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
@@ -30,6 +30,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -100,6 +101,8 @@ class ComposeBasicLayoutsActivity : BaseActivity() {
     fun SearchBar(
         modifier: Modifier
     ) {
+        var textFieldText by remember { mutableStateOf(true) }
+
         //https://developer.android.com/jetpack/compose/text#enter-modify-text
         TextField(
             value = "",
@@ -107,11 +110,15 @@ class ComposeBasicLayoutsActivity : BaseActivity() {
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Default.Search,
-                    contentDescription = null
+                    contentDescription = null,
+                    tint=colorResource(id = R.color.black)
                 )
             },
             colors = TextFieldDefaults.textFieldColors(
-                backgroundColor = MaterialTheme.colors.surface
+                backgroundColor =colorResource(id = R.color.white),
+                textColor=colorResource(id = R.color.black),
+                cursorColor=colorResource(id = R.color.black),
+                placeholderColor=colorResource(id = R.color.black),
             ),
             placeholder = {
                 Text(stringResource(R.string.placeholder_search))
