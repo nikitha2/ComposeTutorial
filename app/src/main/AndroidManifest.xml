@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.composetutorial">
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -39,6 +41,11 @@
 
         <activity
             android:name=".ComposeMigrateActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ComposeTutorial" />
+
+        <activity
+            android:name=".ComposeBasicLayoutsActivity"
             android:exported="true"
             android:theme="@style/Theme.ComposeTutorial" />
 

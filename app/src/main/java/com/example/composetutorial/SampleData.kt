@@ -89,7 +89,8 @@ object SampleData {
     val buttons = listOf(
         MainActivity.Button("Compose overview CodeLab","ComposeOverviewTutorialActivity"),
         MainActivity.Button("Compose basics CodeLab","ComposeBasicsActivity"),
-        MainActivity.Button("Compose Migration CodeLab","ComposeMigrateActivity"))
+        MainActivity.Button("Compose Migration CodeLab","ComposeMigrateActivity"),
+        MainActivity.Button("Compose Basic layouts CodeLab","ComposeBasicLayoutsActivity"))
 
     val cards = listOf(
         ComposeBasicsActivity.Greeting("Hello, 1","This is the content for 1!"),
@@ -113,6 +114,12 @@ object SampleData {
         ComposeBasicsActivity.Greeting("Hello, 19","This is the content for 19!"),
         ComposeBasicsActivity.Greeting("Hello, 20","This is the content for 20!"))
 
-
+    val workouts=listOf(
+        ComposeBasicLayoutsActivity.Workout("Inversions",R.drawable.image5),
+        ComposeBasicLayoutsActivity.Workout("Natural meditation",R.drawable.images),
+        ComposeBasicLayoutsActivity.Workout("Self massage", R.drawable.images3),
+        ComposeBasicLayoutsActivity.Workout("Stress and anxiety",R.drawable.images4),
+        ComposeBasicLayoutsActivity.Workout("Inversions",R.drawable.img1)
+    )
 
 }

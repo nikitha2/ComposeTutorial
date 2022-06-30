@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="defaultPadding">8dp</dimen>
+    <dimen name="Padding4">8dp</dimen>
+    <dimen name="paddingBetweenCards">1dp</dimen>
+    <dimen name="cardWidth">220dp</dimen>
+    <dimen name="cardHeight">150dp</dimen>
+    <dimen name="exc_cardWidth">110dp</dimen>
+
+
+</resources>

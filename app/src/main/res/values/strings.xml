@@ -4,4 +4,10 @@
     <string name="chatLabel">Chat UI with Compose Tutorial</string>
     <string name="show_less">Show less</string>
     <string name="show_more">Show more</string>
+    <string name="workout_image">workout image</string>
+    <string name="align_your_body">ALIGN YOUR BODY</string>
+    <string name="favorite_collection"> "FAVORITE COLLECTION"</string>
+    <string name="placeholder_search">Search</string>
+    <string name="bottom_navigation_home">HOME</string>
+    <string name="bottom_navigation_profile">PROFILE</string>
 </resources>
