@@ -101,12 +101,14 @@ class ComposeBasicLayoutsActivity : BaseActivity() {
     fun SearchBar(
         modifier: Modifier
     ) {
-        var textFieldText by remember { mutableStateOf(true) }
+        var textFieldText by remember { mutableStateOf("") }
 
         //https://developer.android.com/jetpack/compose/text#enter-modify-text
         TextField(
-            value = "",
-            onValueChange = {Toast.makeText(context, it,Toast.LENGTH_SHORT).show()},
+            value = textFieldText,
+            onValueChange = {
+                textFieldText=it
+                Toast.makeText(context, textFieldText,Toast.LENGTH_SHORT).show()},
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Default.Search,
