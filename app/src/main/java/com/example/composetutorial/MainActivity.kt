@@ -60,6 +60,7 @@ class MainActivity : BaseActivity() {
             "ComposeBasicsActivity" -> context?.startActivity(Intent(context, ComposeBasicsActivity::class.java))
             "ComposeMigrateActivity" -> context?.startActivity(Intent(context, ComposeMigrateActivity::class.java))
             "ComposeBasicLayoutsActivity" -> context?.startActivity(Intent(context, ComposeBasicLayoutsActivity::class.java))
+            "ComposeThemeLayoutsActivity" -> context?.startActivity(Intent(context, ComposeThemeLayoutsActivity::class.java))
 
             else -> context?.startActivity(Intent(context, ChatActivity::class.java))
         }

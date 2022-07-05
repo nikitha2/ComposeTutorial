@@ -49,6 +49,11 @@
             android:exported="true"
             android:theme="@style/Theme.ComposeTutorial" />
 
+        <activity
+            android:name=".ComposeThemeLayoutsActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ComposeTutorial" />
+
     </application>
 
 </manifest>
