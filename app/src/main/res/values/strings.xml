@@ -16,4 +16,5 @@
     <string name="top">Top Story</string>
     <string name="popular">Popular</string>
     <string name="read_time">%1$d min read</string>
+    <string name="title_activity_compose_state">ComposeStateActivity</string>
 </resources>

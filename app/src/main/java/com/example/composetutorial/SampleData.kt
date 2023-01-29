@@ -94,7 +94,8 @@ object SampleData {
         MainActivity.Button("Compose basics CodeLab","ComposeBasicsActivity"),
         MainActivity.Button("Compose Migration CodeLab","ComposeMigrateActivity"),
         MainActivity.Button("Compose Basic layouts CodeLab","ComposeBasicLayoutsActivity"),
-        MainActivity.Button("Compose Theme layouts CodeLab","ComposeThemeLayoutsActivity"))
+        MainActivity.Button("Compose Theme layouts CodeLab","ComposeThemeLayoutsActivity"),
+        MainActivity.Button("State in Compose CodeLab","ComposeStateActivity"))
 
     val cards = listOf(
         ComposeBasicsActivity.Greeting("Hello, 1","This is the content for 1!"),
