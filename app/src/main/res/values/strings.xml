@@ -17,4 +17,7 @@
     <string name="popular">Popular</string>
     <string name="read_time">%1$d min read</string>
     <string name="title_activity_compose_state">ComposeStateActivity</string>
+    <string name="reset">Reset</string>
+    <string name="next">Next</string>
+    <string name="add_one">Add one</string>
 </resources>
