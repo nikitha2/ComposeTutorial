@@ -1,5 +1,6 @@
 package com.example.composetutorial
 
+import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Toast
@@ -67,33 +68,33 @@ class ComposeBasicLayoutsActivity : BaseActivity() {
 
     data class Workout(val name: String, @DrawableRes val image: Int)
 
+    @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
     @Composable
     private fun SetupMySootheScreen(workouts: List<Workout>) {
         context = LocalContext.current
 
         Scaffold(
             bottomBar = { SootheBottomNavigation() },
-            backgroundColor = colorResource(id = R.color.greyBackground),
-            content = { padding ->
-                Column(
-                    Modifier.background(colorResource(id = R.color.greyBackground))
-                ) {
-                    SearchBar(
-                        Modifier
-                            .padding(dimensionResource(id = R.dimen.Padding4))
-                            .fillMaxWidth()
-                            .heightIn(min = 56.dp)
-                    )
-                    HomeSection(R.string.align_your_body) {
-                        AlignYourBody(workouts)
-                    }
+            backgroundColor = colorResource(id = R.color.greyBackground)
+        ) {
+            Column(
+                Modifier.background(colorResource(id = R.color.greyBackground))
+            ) {
+                SearchBar(
+                    Modifier
+                        .padding(dimensionResource(id = R.dimen.Padding4))
+                        .fillMaxWidth()
+                        .heightIn(min = 56.dp)
+                )
+                HomeSection(R.string.align_your_body) {
+                    AlignYourBody(workouts)
+                }
 
-                    HomeSection(R.string.favorite_collection) {
-                        Favorites(workouts)
-                    }
+                HomeSection(R.string.favorite_collection) {
+                    Favorites(workouts)
                 }
             }
-        )
+        }
     }
 
     @Composable
