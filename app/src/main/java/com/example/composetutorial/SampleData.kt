@@ -1,7 +1,7 @@
 package com.example.composetutorial
 
 import androidx.annotation.DrawableRes
-import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.*
 
 object SampleData {
     val conversationSample = listOf(
@@ -87,44 +87,47 @@ object SampleData {
                     "It's the Android's modern toolkit for building native UI." +
                     "It simplifies and accelerates UI development on Android." +
                     "Less code, powerful tools, and intuitive Kotlin APIs :)"
-        ))
+        )
+    )
 
     val buttons = listOf(
-        MainActivity.Button("Compose overview CodeLab","ComposeOverviewTutorialActivity"),
-        MainActivity.Button("Compose basics CodeLab","ComposeBasicsActivity"),
-        MainActivity.Button("Compose Migration CodeLab","ComposeMigrateActivity"),
-        MainActivity.Button("Compose Basic layouts CodeLab","ComposeBasicLayoutsActivity"),
-        MainActivity.Button("Compose Theme layouts CodeLab","ComposeThemeLayoutsActivity"),
-        MainActivity.Button("State in Compose CodeLab","ComposeStateActivity"))
+        MainActivity.Button("Compose overview CodeLab", "ComposeOverviewTutorialActivity"),
+        MainActivity.Button("Compose basics CodeLab", "ComposeBasicsActivity"),
+        MainActivity.Button("Compose Migration CodeLab", "ComposeMigrateActivity"),
+        MainActivity.Button("Compose Basic layouts CodeLab", "ComposeBasicLayoutsActivity"),
+        MainActivity.Button("Compose Theme layouts CodeLab", "ComposeThemeLayoutsActivity"),
+        MainActivity.Button("State in Compose CodeLab", "ComposeStateActivity")
+    )
 
     val cards = listOf(
-        ComposeBasicsActivity.Greeting("Hello, 1","This is the content for 1!"),
-        ComposeBasicsActivity.Greeting("Hello, 2","This is the content for 2!"),
-        ComposeBasicsActivity.Greeting("Hello, 3","This is the content for 3!"),
-        ComposeBasicsActivity.Greeting("Hello, 4","This is the content for 4!"),
-        ComposeBasicsActivity.Greeting("Hello, 5","This is the content for 5!"),
-        ComposeBasicsActivity.Greeting("Hello, 6","This is the content for 6!"),
-        ComposeBasicsActivity.Greeting("Hello, 7","This is the content for 7!"),
-        ComposeBasicsActivity.Greeting("Hello, 8","This is the content for 8!"),
-        ComposeBasicsActivity.Greeting("Hello, 9","This is the content for 9!"),
-        ComposeBasicsActivity.Greeting("Hello, 10","This is the content for 10!"),
-        ComposeBasicsActivity.Greeting("Hello, 11","This is the content for 11!"),
-        ComposeBasicsActivity.Greeting("Hello, 12","This is the content for 12!"),
-        ComposeBasicsActivity.Greeting("Hello, 13","This is the content for 13!"),
-        ComposeBasicsActivity.Greeting("Hello, 14","This is the content for 14!"),
-        ComposeBasicsActivity.Greeting("Hello, 15","This is the content for 15!"),
-        ComposeBasicsActivity.Greeting("Hello, 16","This is the content for 16!"),
-        ComposeBasicsActivity.Greeting("Hello, 17","This is the content for 17!"),
-        ComposeBasicsActivity.Greeting("Hello, 18","This is the content for 18!"),
-        ComposeBasicsActivity.Greeting("Hello, 19","This is the content for 19!"),
-        ComposeBasicsActivity.Greeting("Hello, 20","This is the content for 20!"))
+        ComposeBasicsActivity.Greeting("Hello, 1", "This is the content for 1!"),
+        ComposeBasicsActivity.Greeting("Hello, 2", "This is the content for 2!"),
+        ComposeBasicsActivity.Greeting("Hello, 3", "This is the content for 3!"),
+        ComposeBasicsActivity.Greeting("Hello, 4", "This is the content for 4!"),
+        ComposeBasicsActivity.Greeting("Hello, 5", "This is the content for 5!"),
+        ComposeBasicsActivity.Greeting("Hello, 6", "This is the content for 6!"),
+        ComposeBasicsActivity.Greeting("Hello, 7", "This is the content for 7!"),
+        ComposeBasicsActivity.Greeting("Hello, 8", "This is the content for 8!"),
+        ComposeBasicsActivity.Greeting("Hello, 9", "This is the content for 9!"),
+        ComposeBasicsActivity.Greeting("Hello, 10", "This is the content for 10!"),
+        ComposeBasicsActivity.Greeting("Hello, 11", "This is the content for 11!"),
+        ComposeBasicsActivity.Greeting("Hello, 12", "This is the content for 12!"),
+        ComposeBasicsActivity.Greeting("Hello, 13", "This is the content for 13!"),
+        ComposeBasicsActivity.Greeting("Hello, 14", "This is the content for 14!"),
+        ComposeBasicsActivity.Greeting("Hello, 15", "This is the content for 15!"),
+        ComposeBasicsActivity.Greeting("Hello, 16", "This is the content for 16!"),
+        ComposeBasicsActivity.Greeting("Hello, 17", "This is the content for 17!"),
+        ComposeBasicsActivity.Greeting("Hello, 18", "This is the content for 18!"),
+        ComposeBasicsActivity.Greeting("Hello, 19", "This is the content for 19!"),
+        ComposeBasicsActivity.Greeting("Hello, 20", "This is the content for 20!")
+    )
 
-    val workouts=listOf(
-        ComposeBasicLayoutsActivity.Workout("Inversions",R.drawable.image5),
-        ComposeBasicLayoutsActivity.Workout("Natural meditation",R.drawable.images),
+    val workouts = listOf(
+        ComposeBasicLayoutsActivity.Workout("Inversions", R.drawable.image5),
+        ComposeBasicLayoutsActivity.Workout("Natural meditation", R.drawable.images),
         ComposeBasicLayoutsActivity.Workout("Self massage", R.drawable.images3),
-        ComposeBasicLayoutsActivity.Workout("Stress and anxiety",R.drawable.images4),
-        ComposeBasicLayoutsActivity.Workout("Inversions",R.drawable.img1)
+        ComposeBasicLayoutsActivity.Workout("Stress and anxiety", R.drawable.images4),
+        ComposeBasicLayoutsActivity.Workout("Inversions", R.drawable.img1)
     )
 
 
@@ -260,7 +263,16 @@ object SampleData {
         post4.copy(id = 9L),
         post5.copy(id = 10L)
     )
-    data class WellnessTask(val id: Int, val label: String)
-    fun getWellnessTasks() = List(30) { i -> WellnessTask(i, "Task # $i") }
 
+    // here you need to refer to checked with checked.value
+    // data class WellnessTask(val id: Int, val label: String, var checked: MutableState<Boolean> = mutableStateOf(false))
+
+    //here you can refer to checked directly. Because we used delegated @property[by]
+    class WellnessTask(
+        val id: Int,
+        val label: String,
+        initialChecked: Boolean = false
+    ) {
+        var checked by mutableStateOf(initialChecked)
+    }
 }

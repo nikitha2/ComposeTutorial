@@ -43,15 +43,16 @@ fun AddButton(text: String, modifier: Modifier, onclickListener: () -> Unit) {
  * @link[https://developer.android.com/jetpack/compose/state#state-hoisting]
  * State hoisting - Pattern of moving state to a composable's caller to make a composable stateless.
  * The general pattern for state hoisting in Jetpack Compose is to replace the state variable with two parameters:
-        [value]: T: the current value to display
-        [onValueChange]: (T) -> Unit: an event that requests the value to change, where T is the proposed new value
+ *  value: T: the current value to display
+ *  onValueChange: (T) -> Unit: an event that requests the value to change, where T is the proposed new value
  * [StatefulWaterCount] hoisted count from StatelessCounter to StatefulCounter.
  */
 @Composable
 fun StatefulWaterCount(modifier: Modifier) {
-    /** remember - saves state across re-compositions
-     *   rememberSaveable - saves states across configuration changes
+    /**  [remember] - saves state across re-compositions
+     *   [rememberSaveable] - saves states across configuration changes
      *                      (recreation of activity) and re-compositions
+     *   [mutableStateOf] - Makes the parameter observable
      */
     var count by rememberSaveable { mutableStateOf(0) }
     StatelessWaterCount(modifier, count, onIncrement = { count += 1 }, onReset = { count = 0 })
