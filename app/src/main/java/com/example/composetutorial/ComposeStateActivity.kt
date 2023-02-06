@@ -15,7 +15,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.composetutorial.stateCodelab.Notes
-import com.example.composetutorial.stateCodelab.WaterCount
+import com.example.composetutorial.stateCodelab.StatefulWaterCount
 import com.example.composetutorial.ui.theme.ComposeTutorialTheme
 
 class ComposeStateActivity : BaseActivity() {
@@ -44,7 +44,7 @@ class ComposeStateActivity : BaseActivity() {
                 .fillMaxSize()
                 .background(color = colorResource(id = R.color.greyBackground)),
         ) {
-            WaterCount(modifier.fillMaxHeight(0.3f))
+            StatefulWaterCount(modifier.fillMaxHeight(0.3f))
             Notes(
                 notePadding = PaddingValues(horizontal = 24.dp, vertical = 8.dp),
                 contentPadding = PaddingValues(vertical = 24.dp, horizontal = 24.dp)

@@ -9,6 +9,7 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -54,15 +55,19 @@ fun Notes(notePadding: PaddingValues, contentPadding: PaddingValues) {
             )
         }
         items(SampleData.noteItems) { item ->
-            var checked by remember { mutableStateOf(false) }
-            ShowNotesScreen(item,Modifier.padding(notePadding),
-                checked = checked,
-                onCheck = {
-                    checked = !checked
-                },
-                onClose = {
+            var checked by rememberSaveable { mutableStateOf(false) }
+            var showTask by rememberSaveable { mutableStateOf(true) }
 
-               })
+            if (showTask){
+                ShowNotesScreen(item, Modifier.padding(notePadding),
+                    checked = checked,
+                    onCheck = {
+                        checked = !checked
+                    },
+                    onClose = {
+                        showTask = false
+                    })
+            }
         }
     }
 }
