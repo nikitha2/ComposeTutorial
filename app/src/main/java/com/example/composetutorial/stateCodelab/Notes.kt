@@ -14,26 +14,27 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.composetutorial.SampleData
+import com.example.composetutorial.SampleData.WellnessTask
+import com.example.composetutorial.SampleData.getWellnessTasks
 import com.example.composetutorial.ui.theme.ComposeTutorialTheme
 
 @Composable
 fun ShowNotesScreen(
-    note: String,
+    taskLabel: String,
     modifier: Modifier,
     checked: Boolean,
-    onCheck: (Boolean) -> Unit,
+    onCheckedChange: (Boolean) -> Unit,
     onClose: () -> Unit
 ) {
     Row(modifier = modifier.fillMaxWidth(),
         verticalAlignment= Alignment.CenterVertically) {
         Text(
-            text = "Task # $note",
-            modifier = modifier,
+            text = taskLabel,
+            modifier = modifier.weight(1f),
             color = MaterialTheme.colors.onPrimary
         )
 
-        Checkbox(checked = checked, onCheckedChange = onCheck)
+        Checkbox(checked = checked, onCheckedChange = onCheckedChange)
         IconButton(onClick = onClose) {
             Icon(Icons.Filled.Close, contentDescription = "Close")
         }
@@ -42,7 +43,10 @@ fun ShowNotesScreen(
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun Notes(notePadding: PaddingValues, contentPadding: PaddingValues) {
+fun WellnessTasksList(notePadding: PaddingValues,
+                      contentPadding: PaddingValues,
+                      list: List<WellnessTask> = remember { getWellnessTasks() }
+) {
     LazyColumn(contentPadding = contentPadding) {
         stickyHeader {
             Text(
@@ -54,21 +58,24 @@ fun Notes(notePadding: PaddingValues, contentPadding: PaddingValues) {
                 color = MaterialTheme.colors.background,
             )
         }
-        items(SampleData.noteItems) { item ->
-            var checked by rememberSaveable { mutableStateOf(false) }
-            var showTask by rememberSaveable { mutableStateOf(true) }
-
-            if (showTask){
-                ShowNotesScreen(item, Modifier.padding(notePadding),
-                    checked = checked,
-                    onCheck = {
-                        checked = !checked
-                    },
-                    onClose = {
-                        showTask = false
-                    })
-            }
+        items(list) { item ->
+            WellnessTask(item,notePadding)
         }
+    }
+}
+@Composable
+fun WellnessTask(item: WellnessTask,notePadding: PaddingValues) {
+    var checked by rememberSaveable { mutableStateOf(false) }
+    var showTask by rememberSaveable { mutableStateOf(true) }
+    if (showTask){
+        ShowNotesScreen(item.label, Modifier.padding(notePadding),
+            checked = checked,
+            onCheckedChange = {
+                checked = !checked
+            },
+            onClose = {
+                showTask = false
+            })
     }
 }
 
@@ -77,7 +84,7 @@ fun Notes(notePadding: PaddingValues, contentPadding: PaddingValues) {
 @Composable
 fun NotesPreview() {
     ComposeTutorialTheme {
-        Notes(
+        WellnessTasksList(
             notePadding = PaddingValues(vertical = 8.dp),
             contentPadding = PaddingValues(vertical = 24.dp, horizontal = 24.dp)
         )

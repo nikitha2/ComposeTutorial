@@ -260,32 +260,7 @@ object SampleData {
         post4.copy(id = 9L),
         post5.copy(id = 10L)
     )
+    data class WellnessTask(val id: Int, val label: String)
+    fun getWellnessTasks() = List(30) { i -> WellnessTask(i, "Task # $i") }
 
-    val noteItems = listOf(
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11",
-        "12",
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19",
-        "20",
-        "21",
-        "22",
-        "23",
-        "24",
-        "25"
-    )
 }
