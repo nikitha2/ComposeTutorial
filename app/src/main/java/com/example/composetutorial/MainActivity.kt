@@ -33,15 +33,7 @@ class MainActivity : BaseActivity() {
                 ) {
                     Scaffold(
                         backgroundColor = MaterialTheme.colors.primary,
-                        topBar = {
-                            TopAppBar(
-                                title = {
-                                    Text(text = stringResource(R.string.mainLabel))
-                                },
-                                backgroundColor = MaterialTheme.colors.surface,
-                                elevation = 10.dp
-                            )
-                        },
+                        topBar = { SetToolbar(title = stringResource(R.string.mainLabel)) },
                         content = {
                             Column(
                                 modifier = Modifier.padding(it),
