@@ -5,7 +5,9 @@ import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
@@ -13,8 +15,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.composetutorial.ui.theme.ComposeTutorialTheme
 
 class MainActivity : BaseActivity() {
@@ -26,8 +30,28 @@ class MainActivity : BaseActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.primary
-                ){
-                    SetButtons(SampleData.buttons)
+                ) {
+                    Scaffold(
+                        backgroundColor = MaterialTheme.colors.primary,
+                        topBar = {
+                            TopAppBar(
+                                title = {
+                                    Text(text = stringResource(R.string.mainLabel))
+                                },
+                                backgroundColor = MaterialTheme.colors.surface,
+                                elevation = 10.dp
+                            )
+                        },
+                        content = {
+                            Column(
+                                modifier = Modifier.padding(it),
+                                verticalArrangement = Arrangement.Center,
+                                horizontalAlignment = Alignment.CenterHorizontally
+                            ) {
+                                SetButtons(SampleData.buttons)
+                            }
+                        }
+                    )
                 }
             }
         }
@@ -37,7 +61,6 @@ class MainActivity : BaseActivity() {
 
     @Composable
     private fun SetButtons(buttons: List<Button>) {
-        SetToolbar(stringResource(R.string.mainLabel))
         context = LocalContext.current
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
@@ -45,23 +68,56 @@ class MainActivity : BaseActivity() {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             items(buttons) { button ->
-                Button(onClick = {
-                    openActivity(button.screenToOpen)
-                }) {
+                Button(
+                    onClick = {
+                        openActivity(button.screenToOpen)
+                    },
+                    colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface)
+                ) {
                     Text(text = button.text)
                 }
+            }
         }
-    }
     }
 
     private fun openActivity(screenToOpen: String) {
         when (screenToOpen) {
-            "ComposeOverviewTutorialActivity" -> context?.startActivity(Intent(context, ChatActivity::class.java))
-            "ComposeBasicsActivity" -> context?.startActivity(Intent(context, ComposeBasicsActivity::class.java))
-            "ComposeMigrateActivity" -> context?.startActivity(Intent(context, ComposeMigrateActivity::class.java))
-            "ComposeBasicLayoutsActivity" -> context?.startActivity(Intent(context, ComposeBasicLayoutsActivity::class.java))
-            "ComposeThemeLayoutsActivity" -> context?.startActivity(Intent(context, ComposeThemeLayoutsActivity::class.java))
-            "ComposeStateActivity" -> context?.startActivity(Intent(context, ComposeStateActivity::class.java))
+            "ComposeOverviewTutorialActivity" -> context?.startActivity(
+                Intent(
+                    context,
+                    ChatActivity::class.java
+                )
+            )
+            "ComposeBasicsActivity" -> context?.startActivity(
+                Intent(
+                    context,
+                    ComposeBasicsActivity::class.java
+                )
+            )
+            "ComposeMigrateActivity" -> context?.startActivity(
+                Intent(
+                    context,
+                    ComposeMigrateActivity::class.java
+                )
+            )
+            "ComposeBasicLayoutsActivity" -> context?.startActivity(
+                Intent(
+                    context,
+                    ComposeBasicLayoutsActivity::class.java
+                )
+            )
+            "ComposeThemeLayoutsActivity" -> context?.startActivity(
+                Intent(
+                    context,
+                    ComposeThemeLayoutsActivity::class.java
+                )
+            )
+            "ComposeStateActivity" -> context?.startActivity(
+                Intent(
+                    context,
+                    ComposeStateActivity::class.java
+                )
+            )
 
             else -> context?.startActivity(Intent(context, ChatActivity::class.java))
         }
