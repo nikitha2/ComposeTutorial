@@ -1,5 +1,6 @@
 package com.example.composetutorial.stateCodelab.viewModel
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,6 +10,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composetutorial.ui.theme.ComposeTutorialTheme
@@ -40,7 +42,13 @@ fun MediumArticleCodeStateless(count: Int, onButtonClickListener: () -> Unit) {
 @Composable
 fun MediumArticleCodeStateful() {
     var count by rememberSaveable { mutableStateOf(0) }
-    MediumArticleCodeStateless(count, onButtonClickListener = { count += 1 })
+    val context= LocalContext.current
+
+    MediumArticleCodeStateless(count) {
+        Toast.makeText(context,"button clicked", Toast.LENGTH_SHORT).show()
+        count += 1
+    }
+
 }
 
 
