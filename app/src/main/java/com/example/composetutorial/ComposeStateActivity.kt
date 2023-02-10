@@ -22,7 +22,6 @@ import com.example.composetutorial.ui.theme.ComposeTutorialTheme
 
 class ComposeStateActivity : BaseActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
